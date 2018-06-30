@@ -9,22 +9,23 @@ import { MaterialModule } from './material.module';
 
 import { AppComponent } from './app.component';
 import { StartGameComponent } from './start-game/start-game.component';
+import { HomeComponent } from './home/home.component';
+import {AppRoutingModule} from "./app-routing-module";
 
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    StartGameComponent
+    StartGameComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     MaterialModule,
     HttpClientModule,
-    RouterModule.forRoot([
-      { path: "start-game", component: StartGameComponent }
-    ])
+    AppRoutingModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
