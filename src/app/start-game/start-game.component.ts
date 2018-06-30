@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {HttpClient} from "@angular/common/http";
+import { CoursesService } from "../courses.service";
 
 @Component({
   selector: 'app-start-game',
@@ -7,10 +7,14 @@ import {HttpClient} from "@angular/common/http";
   styleUrls: ['./start-game.component.css']
 })
 export class StartGameComponent implements OnInit {
+  courses: Courses[];
 
-  constructor(private http: HttpClient) { }
+  constructor(private coursesService: CoursesService) { }
 
   ngOnInit() {
-    console.log("yolo");
+
+  }
+
+  selCourse(){
   }
 }

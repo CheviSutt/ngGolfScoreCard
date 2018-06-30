@@ -1,12 +1,13 @@
 <!--The content below is only a placeholder and can be replaced.-->
-
-
 <mat-card-title>Golf</mat-card-title>
-<ul>
-  <li><a routerLink="">Home</a></li>
-  <li><a routerLink="start-game">Start Game</a></li>
-</ul>
-<!--&lt;!&ndash;<app-home></app-home>&ndash;&gt; same acheived below in routing-->
+<mat-card-actions>
+  <div class="buttonRow">
+    <button mat-raised-button color="primary" routerLink="">Home</button>
+    <button mat-raised-button color="primary" routerLink="start-game">Start Game</button>
+    <button mat-raised-button color="primary">Create Account</button>
+    <button mat-raised-button color="primary">Sign In</button>
+  </div>
+</mat-card-actions>
 <router-outlet></router-outlet>
 <!--<mat-card class="gradient">-->
 

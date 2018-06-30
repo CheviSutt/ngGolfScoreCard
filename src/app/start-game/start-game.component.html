@@ -1,3 +1,14 @@
-<p>
-  start-game works!
-</p>
+<mat-card class="container">
+  <mat-card-actions class="buttonRow">
+    <button mat-button class="bntColor" (click)="selCourse()" [matMenuTriggerFor]="menu">Select Course</button>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item>Item 1</button>
+      <button mat-menu-item>Item 2</button>
+    </mat-menu>
+    <button mat-button class="bntColor"[matMenuTriggerFor]="menu">Select Tee</button>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item>Item 1</button>
+      <button mat-menu-item>Item 2</button>
+    </mat-menu>
+  </mat-card-actions>
+</mat-card>
