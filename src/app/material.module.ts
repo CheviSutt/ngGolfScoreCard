@@ -4,7 +4,8 @@ import {
   MatButtonModule,
   MatCardModule,
   MatCheckboxModule,
-  MatMenuModule
+  MatMenuModule,
+  MatListModule
 } from "@angular/material";
 
 
@@ -13,14 +14,16 @@ import {
     MatButtonModule,
     MatCheckboxModule,
     MatCardModule,
-    MatMenuModule
+    MatMenuModule,
+    MatListModule
     ],
 
   exports:[
     MatButtonModule,
     MatCheckboxModule,
     MatCardModule,
-    MatMenuModule
+    MatMenuModule,
+    MatListModule
   ]
 })
 

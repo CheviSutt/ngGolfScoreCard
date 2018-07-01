@@ -11,6 +11,8 @@ import { AppComponent } from './app.component';
 import { StartGameComponent } from './start-game/start-game.component';
 import { HomeComponent } from './home/home.component';
 import {AppRoutingModule} from "./app-routing-module";
+import { SelectCourseComponent } from './select-course/select-course.component';
+import { SelectTeeComponent } from './select-tee/select-tee.component';
 
 
 
@@ -18,7 +20,9 @@ import {AppRoutingModule} from "./app-routing-module";
   declarations: [
     AppComponent,
     StartGameComponent,
-    HomeComponent
+    HomeComponent,
+    SelectCourseComponent,
+    SelectTeeComponent
   ],
   imports: [
     BrowserModule,
