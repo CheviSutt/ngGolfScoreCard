@@ -1,4 +1,5 @@
-export interface Courses {
+export interface TeeSelect {
+  data:string;
   name: string;
   id: string;
   courseId: string;

@@ -13,4 +13,10 @@ export class CoursesService {
   getCourse(): Observable<any>{
     return this.http.get(`https://uxcobra.com/golfapi/courses.txt`)
     }
+
+  // getTee(): Observable<any>{
+  //   return this.http.get(`https://uxcobra.com/golfapi/course11819.txt`)
+  // }
 }
+
+

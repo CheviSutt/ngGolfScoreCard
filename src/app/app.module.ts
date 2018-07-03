@@ -10,7 +10,7 @@ import { MaterialModule } from './material.module';
 import { AppComponent } from './app.component';
 import { StartGameComponent } from './start-game/start-game.component';
 import { HomeComponent } from './home/home.component';
-import {AppRoutingModule} from "./app-routing-module";
+import { AppRoutingModule } from "./app-routing-module";
 import { SelectCourseComponent } from './select-course/select-course.component';
 import { SelectTeeComponent } from './select-tee/select-tee.component';
 

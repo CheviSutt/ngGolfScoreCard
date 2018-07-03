@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { CoursesService } from "../courses.service";
-import { Courses } from "../Domains/courses";
+import { CoursesService } from '../courses.service';
+import { Courses } from '../Domains/courses';
+import { TeeSelect } from '../Domains/teeSelect';
 
 @Component({
   selector: 'app-start-game',
@@ -9,6 +10,7 @@ import { Courses } from "../Domains/courses";
 })
 export class StartGameComponent implements OnInit {
   courses: Courses[];
+  // teeDifficulty: TeeSelect[];
 
   constructor(private coursesService: CoursesService) { }
 
@@ -26,4 +28,11 @@ export class StartGameComponent implements OnInit {
       this.courses = result.courses;
     });
   }
+
+  // selTee(){
+  //   this.coursesService.getTee().subscribe(result => {
+  //     console.log(result.teeDifficulty);
+  //     this.teeDifficulty = result.teeDifficulty;
+  //   });
+  // }
 }
