@@ -6,17 +6,13 @@ import { Observable } from 'rxjs/index';
 @Injectable({
   providedIn: 'root'
 })
-export class CoursesService {
+export class HolesService {
 
   constructor(private http: HttpClient) { }
 
-  getCourse(): Observable<any> {
-    return this.http.get(`https://uxcobra.com/golfapi/courses.txt`);
-    }
+  // const playaTee = this.http.get(`https://uxcobra.com/golfapi/course11819.txt`);
 
-  // getTee(): Observable<any> {
-  //   return this.http.get(`https://uxcobra.com/golfapi/course11819.txt`);
-  // }
+  getTee(): Observable<any> {
+    return this.http.get(`https://uxcobra.com/golfapi/course11819.txt`);
+  }
 }
-
-

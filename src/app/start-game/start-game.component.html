@@ -7,11 +7,11 @@
     </mat-menu>
 
 
-    <!--&lt;!&ndash;(click)="selTee()"&ndash;&gt; put in button for teeSelect-->
-    <button mat-button class="bntColor" [matMenuTriggerFor]="teeMenu">Select Tee</button>
+    <!--(click)="selTee()" put in button for teeSelect-->
+    <button mat-button class="bntColor" (click)="selTee()" [matMenuTriggerFor]="teeMenu">Select Tee</button>
     <mat-menu #teeMenu="matMenu">
-      <!--<button mat-menu-item *ngFor="let teeDiff of teeDifficulty">{{teeDiff.teeType}}</button>-->
-      <button mat-menu-item>Item 2</button>
+      <button mat-menu-item *ngFor="let tee of teeDifficulty">{{tee.hole}}</button>
+      <!--<button mat-menu-item>Item 2</button>-->
     </mat-menu>
   </mat-card-actions>
 

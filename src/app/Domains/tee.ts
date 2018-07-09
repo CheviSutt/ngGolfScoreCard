@@ -1,9 +1,7 @@
-export interface TeeSelect {
-  data:string;
+export interface Tee {
   name: string;
+  data: string;
   id: string;
-  courseId: string;
-  image: string;
   holes: string;
   hole: string;
   teeBoxes: string;

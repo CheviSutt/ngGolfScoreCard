@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { CoursesService } from '../courses.service';
 import { Courses } from '../Domains/courses';
-import { TeeSelect } from '../Domains/teeSelect';
+import { Tee } from '../Domains/tee';
+import { HolesService } from '../holes.service';
 
 @Component({
   selector: 'app-start-game',
@@ -10,9 +11,13 @@ import { TeeSelect } from '../Domains/teeSelect';
 })
 export class StartGameComponent implements OnInit {
   courses: Courses[];
-  // teeDifficulty: TeeSelect[];
+  teeDifficulty: Tee[];
+  // playaTee: [''];
 
-  constructor(private coursesService: CoursesService) { }
+  constructor(
+    private coursesService: CoursesService,
+    private holesService: HolesService
+  ) { }
 
   ngOnInit() {
     // this.coursesService.getCourse().subscribe(result => {
@@ -22,17 +27,18 @@ export class StartGameComponent implements OnInit {
   }
 
   selCourse() {
-    //return this.courses;
+    // return this.courses;
     this.coursesService.getCourse().subscribe(result => {
       console.log(result.courses);
       this.courses = result.courses;
     });
   }
 
-  // selTee(){
-  //   this.coursesService.getTee().subscribe(result => {
-  //     console.log(result.teeDifficulty);
-  //     this.teeDifficulty = result.teeDifficulty;
-  //   });
-  // }
+  selTee() {
+    this.holesService.getTee().subscribe(result => {
+      console.log(result.data.holes);
+      this.teeDifficulty = result.data.holes;
+    });
+  }
 }
+
