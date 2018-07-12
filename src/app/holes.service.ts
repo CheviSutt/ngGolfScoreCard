@@ -7,12 +7,11 @@ import { Observable } from 'rxjs/index';
   providedIn: 'root'
 })
 export class HolesService {
+  courseId: number;
 
   constructor(private http: HttpClient) { }
 
-  // const playaTee = this.http.get(`https://uxcobra.com/golfapi/course11819.txt`);
-
   getTee(): Observable<any> {
-    return this.http.get(`https://uxcobra.com/golfapi/course11819.txt`);
+    return this.http.get(`https://uxcobra.com/golfapi/course`+ this.courseId +`.txt`);
   }
 }
