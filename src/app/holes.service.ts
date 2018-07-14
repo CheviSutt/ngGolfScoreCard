@@ -12,6 +12,6 @@ export class HolesService {
   constructor(private http: HttpClient) { }
 
   getTee(): Observable<any> {
-    return this.http.get(`https://uxcobra.com/golfapi/course`+ this.courseId +`.txt`);
+    return this.http.get(`https://uxcobra.com/golfapi/course` + this.courseId + `.txt`);
   }
 }
