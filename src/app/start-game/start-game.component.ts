@@ -47,14 +47,14 @@ export class StartGameComponent implements OnInit {
     //   console.log(result.courses);
     //   this.courses = result.courses;
     // });
-    this.selectedCourse = c;
+    this.selectedCourse = c; // c is the value of the selected course
     console.log(c.name);
     console.log(c.id);
     this.holesService.courseId = c.id;
 
     this.holesService.getTee().subscribe(result => {
-      console.log(result.data.holes[0].teeType);
-      console.log(result.data.holes[0].teeBoxes);
+      // console.log(result.data.holes[0].teeType);
+      // console.log(result.data.holes[0].teeBoxes);
       this.teeDifficulty = result.data.holes[0].teeBoxes;
       console.log(result.data.holes);
       this.courseData = result.data.holes;
@@ -74,13 +74,12 @@ export class StartGameComponent implements OnInit {
     console.log(t.teeTypeId);
     for (let i = 0; i < this.courseData.length; i++) {
       this.holesArray.push({
+       'holes': this.courseData[i].hole,
        'yards': this.courseData[i].teeBoxes[t.teeTypeId - 1].yards,
        'par': this.courseData[i].teeBoxes[t.teeTypeId - 1].par,
        'hcp': this.courseData[i].teeBoxes[t.teeTypeId - 1].hcp
     });
     }
   }
-
-
 }
 
