@@ -13,12 +13,13 @@
     </mat-menu>
 
     <button mat-button class="bntColor">Add Player</button>
+    <h1>{{courseName}}</h1>
 
     <div>
-      <p>Hole:</p>
-      <p>Yards:</p>
-      <p>Par:</p>
-      <p>HCP:</p>
+      <p>{{holeHeader}}</p>
+      <p>{{yardsHeader}}</p>
+      <p>{{parHeader}}</p>
+      <p>{{hcpHeader}}</p>
     </div>
 
     <div class="courseInfo" *ngFor="let hole of holesArray">
@@ -26,6 +27,8 @@
       <p>{{hole.yards}}</p>
       <p>{{hole.par}}</p>
       <p>{{hole.hcp}}</p>
+      <!--<p>{{hole.player}}</p> -->
+      <!--<p class='playaFloss' id='playa" + p + "'><span onclick='delPlaya(" + p + ")' class='fa fa-trash'></span></p>-->
     </div>
 
     <!--<div class="playa">-->

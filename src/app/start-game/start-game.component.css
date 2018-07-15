@@ -27,3 +27,12 @@ background-color: #dadfea;
   /*border: 1px solid black;*/
   border-bottom: 1px solid black;
 }
+
+.playaFloss{
+  display: flex;
+  padding: 4px;
+  border: 2px solid black;
+  align-items: center;
+  margin: 8px;
+  border-radius: 2px;
+}

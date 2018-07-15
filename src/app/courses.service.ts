@@ -8,6 +8,7 @@ import { Observable } from 'rxjs/index';
 })
 export class CoursesService {
 
+  // holeHeader: string; // 07/15/18
   constructor(private http: HttpClient) { }
 
   getCourse(): Observable<any> {

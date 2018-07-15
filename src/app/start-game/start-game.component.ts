@@ -18,8 +18,15 @@ export class StartGameComponent implements OnInit {
   holesArray: Array<any> = [];
   teeNumber: number;
 
-  numPlayers: Array<any>; // 07/14/18
-  selectedPlayer: string; // 07/14/18
+  courseName = this.selectedCourse; // 07/15/18 Binds the course title
+  holeHeader: string;
+  yardsHeader: string;
+  parHeader: string;
+  hcpHeader: string; // ------
+  // numPlayers: Array<any>; // 07/14/18
+  // selectedPlayer: string; // 07/14/18
+  // holeHeader: string; // 07/15/18
+
 
   constructor(
     private coursesService: CoursesService,
@@ -28,6 +35,7 @@ export class StartGameComponent implements OnInit {
     this.coursesService.getCourse().subscribe(result => {
       console.log(result.courses);
       this.courses = result.courses;
+      // this.holeHeader = this.coursesService.holeHeader; // 07/15/18
     });
   //   this.holesService.getTee().subscribe(result => {
   //     console.log(result.data.holes[0].teeType);
@@ -54,6 +62,12 @@ export class StartGameComponent implements OnInit {
     console.log(c.id);
     this.holesService.courseId = c.id;
 
+    this.courseName = c.name; // 07/15/18
+    this.holeHeader = 'Hole:';
+    this.yardsHeader = 'Yards:';
+    this.parHeader = 'Par:';
+    this.hcpHeader = 'HCP:'; // -------
+
     this.holesService.getTee().subscribe(result => {
       // console.log(result.data.holes[0].teeType);
       // console.log(result.data.holes[0].teeBoxes);
@@ -79,25 +93,29 @@ export class StartGameComponent implements OnInit {
        'holes': this.courseData[i].hole,
        'yards': this.courseData[i].teeBoxes[t.teeTypeId - 1].yards,
        'par': this.courseData[i].teeBoxes[t.teeTypeId - 1].par,
-       'hcp': this.courseData[i].teeBoxes[t.teeTypeId - 1].hcp
-    });
+       'hcp': this.courseData[i].teeBoxes[t.teeTypeId - 1].hcp,
+       // 'player': this.courseData[i].player
+      });
+
+      // buildCard() {
+      //  const numPlayers = 4;
+      //   for (let p = 1; p <= numPlayers; p++) {
+      //     '<div class=\'playaFloss\' id=\'playa' + p + '\'></span><span contenteditable=\'true\'>Player' + p + '</span></div>';
+      //   }
+      // }
+
     }
 
-    // buildCard() {
+    // buildCard(); {
     //   for (let p = 1; p <= numPlayers; p++) {
-    //     this.numPlayers.push({
-    //
-    //     });
-    //     // for (let h = 0; h < selcourse.data.holes.length; h++){
-    //     //
-    //     // }
-    //       }
+    //     '<div class=\'playaFloss\' id=\'playa' + p + '\'></span><span contenteditable=\'true\'>Player' + p + '</span></div>';
+    //   }
     // }
 
   }
 
-  addPlaya(p) {
-    this.selectedPlayer = p.numPlayers;
-  }
+  // addPlaya(p) {
+  //   this.selectedPlayer = p.numPlayers;
+  // }
 }
 
