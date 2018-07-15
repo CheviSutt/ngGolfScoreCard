@@ -15,6 +15,14 @@
 background-color: #dadfea;
 }
 
+.header {
+  border-right: 1px solid black;
+}
+
+.headInfo1 {
+  border-bottom: 1px solid black;
+}
+
 .courseInfo {
   /*display: flex;*/
   /*align-items: center;*/
@@ -22,17 +30,17 @@ background-color: #dadfea;
 
 }
 
-.headInfo {
+.headInfo2 {
   /*display: flex;*/
   /*border: 1px solid black;*/
   border-bottom: 1px solid black;
 }
 
-.playaFloss{
-  display: flex;
-  padding: 4px;
-  border: 2px solid black;
-  align-items: center;
-  margin: 8px;
-  border-radius: 2px;
-}
+/*.playaFloss{*/
+  /*display: flex;*/
+  /*padding: 4px;*/
+  /*border: 2px solid black;*/
+  /*align-items: center;*/
+  /*margin: 8px;*/
+  /*border-radius: 2px;*/
+/*}*/

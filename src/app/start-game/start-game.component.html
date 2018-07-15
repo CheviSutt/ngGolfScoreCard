@@ -12,23 +12,41 @@
       <!--<button mat-menu-item>Item 2</button>-->
     </mat-menu>
 
-    <button mat-button class="bntColor">Add Player</button>
+    <!--<button mat-button class="bntColor">Add Player</button>-->
     <h1>{{courseName}}</h1>
 
-    <div>
-      <p>{{holeHeader}}</p>
+    <div class="header">
+      <p class="headInfo1">{{holeHeader}}</p>
       <p>{{yardsHeader}}</p>
       <p>{{parHeader}}</p>
       <p>{{hcpHeader}}</p>
     </div>
 
     <div class="courseInfo" *ngFor="let hole of holesArray">
-      <p class="headInfo">{{hole.holes}}</p>
+      <p class="headInfo2">{{hole.holes}}</p>
       <p>{{hole.yards}}</p>
       <p>{{hole.par}}</p>
       <p>{{hole.hcp}}</p>
       <!--<p>{{hole.player}}</p> -->
       <!--<p class='playaFloss' id='playa" + p + "'><span onclick='delPlaya(" + p + ")' class='fa fa-trash'></span></p>-->
+    </div>
+
+    <!--<div class="playas" [@players]="players.length"> -->
+
+    <div class="playas">
+      <div class="playaFlossin">
+        <p class="sm">Don't Rage Quit!!!</p>
+
+        <form>
+          <input type="text" class="txt" name="player" placeholder="Player Name" [(ngModel)]="playerText">
+          <input type="submit" class="btn" [value]="playerText" (click)="addPlaya()"> <!--value="{{btnText}}" is the same thing.-->
+        </form>
+      </div>
+      <div>
+        <p class="life-container" *ngFor="let player of players; let i = index" (click)="removePlaya(i)">
+          {{player}}
+        </p>
+      </div>
     </div>
 
     <!--<div class="playa">-->

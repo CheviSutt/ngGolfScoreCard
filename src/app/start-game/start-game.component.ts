@@ -22,20 +22,18 @@ export class StartGameComponent implements OnInit {
   holeHeader: string;
   yardsHeader: string;
   parHeader: string;
-  hcpHeader: string; // ------
-  // numPlayers: Array<any>; // 07/14/18
-  // selectedPlayer: string; // 07/14/18
-  // holeHeader: string; // 07/15/18
+  hcpHeader: string; // -----
+  players = [];
+  playerText = '';
+  playerCount: number;
 
-
-  constructor(
+   constructor(
     private coursesService: CoursesService,
     private holesService: HolesService
   ) {
     this.coursesService.getCourse().subscribe(result => {
       console.log(result.courses);
       this.courses = result.courses;
-      // this.holeHeader = this.coursesService.holeHeader; // 07/15/18
     });
   //   this.holesService.getTee().subscribe(result => {
   //     console.log(result.data.holes[0].teeType);
@@ -46,6 +44,9 @@ export class StartGameComponent implements OnInit {
    }
 
   ngOnInit() {
+    this.holesService.player.subscribe(res => this.players = res);
+    this.playerCount = this.players.length;
+    this.holesService.changePlayer(this.players);
     // this.coursesService.getCourse().subscribe(result => {
     //   this.courses = result.courses;
     //   console.log(this.courses);
@@ -114,8 +115,17 @@ export class StartGameComponent implements OnInit {
 
   }
 
-  // addPlaya(p) {
-  //   this.selectedPlayer = p.numPlayers;
-  // }
+  addPlaya() {
+     this.players.push(this.playerText);
+     this.playerText = '';
+     this.playerCount = this.players.length;
+     this.holesService.changePlayer(this.players);
+  }
+
+  removePlaya(i) {
+   this.players.splice(i, 1);
+   this.holesService.changePlayer(this.players);
+  }
+
 }
 
