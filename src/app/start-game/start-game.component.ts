@@ -18,6 +18,9 @@ export class StartGameComponent implements OnInit {
   holesArray: Array<any> = [];
   teeNumber: number;
 
+  numPlayers: Array<any>; // 07/14/18
+  selectedPlayer: string; // 07/14/18
+
   constructor(
     private coursesService: CoursesService,
     private holesService: HolesService
@@ -42,7 +45,6 @@ export class StartGameComponent implements OnInit {
   }
 
   selCourse(c) {
-    // return this.courses;
     // this.coursesService.getCourse().subscribe(result => {
     //   console.log(result.courses);
     //   this.courses = result.courses;
@@ -80,6 +82,22 @@ export class StartGameComponent implements OnInit {
        'hcp': this.courseData[i].teeBoxes[t.teeTypeId - 1].hcp
     });
     }
+
+    // buildCard() {
+    //   for (let p = 1; p <= numPlayers; p++) {
+    //     this.numPlayers.push({
+    //
+    //     });
+    //     // for (let h = 0; h < selcourse.data.holes.length; h++){
+    //     //
+    //     // }
+    //       }
+    // }
+
+  }
+
+  addPlaya(p) {
+    this.selectedPlayer = p.numPlayers;
   }
 }
 

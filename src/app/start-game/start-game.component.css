@@ -14,3 +14,16 @@
 .bntColor {
 background-color: #dadfea;
 }
+
+.courseInfo {
+  /*display: flex;*/
+  /*align-items: center;*/
+  border-right: 1px solid black;
+
+}
+
+.headInfo {
+  /*display: flex;*/
+  /*border: 1px solid black;*/
+  border-bottom: 1px solid black;
+}

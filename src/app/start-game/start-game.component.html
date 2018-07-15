@@ -12,13 +12,32 @@
       <!--<button mat-menu-item>Item 2</button>-->
     </mat-menu>
 
+    <button mat-button class="bntColor">Add Player</button>
+
+    <div>
+      <p>Hole:</p>
+      <p>Yards:</p>
+      <p>Par:</p>
+      <p>HCP:</p>
+    </div>
+
     <div class="courseInfo" *ngFor="let hole of holesArray">
-      <p>{{hole.holes}}</p>
+      <p class="headInfo">{{hole.holes}}</p>
       <p>{{hole.yards}}</p>
       <p>{{hole.par}}</p>
       <p>{{hole.hcp}}</p>
     </div>
 
+    <!--<div class="playa">-->
+      <!--<input type="number" min="0">-->
+    <!--</div>-->
+
   </mat-card-actions>
 
+  <!--<div class="courseInfo" *ngFor="let hole of holesArray">-->
+    <!--<p class="headInfo">{{hole.holes}}</p>-->
+    <!--<p>{{hole.yards}}</p>-->
+    <!--<p>{{hole.par}}</p>-->
+    <!--<p>{{hole.hcp}}</p>-->
+  <!--</div>-->
 
