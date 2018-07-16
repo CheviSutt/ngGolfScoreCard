@@ -1,6 +1,6 @@
 <mat-card class="container">
   <mat-card-actions class="buttonRow">
-
+  <div class="cardUpper">
     <button mat-button class="bntColor"[matMenuTriggerFor]="courseMenu">Select Course</button>
     <mat-menu #courseMenu="matMenu">
       <button mat-menu-item (click)="selCourse(course)" *ngFor="let course of courses">{{course.name}}</button>
@@ -12,25 +12,28 @@
       <!--<button mat-menu-item>Item 2</button>-->
     </mat-menu>
 
+
     <!--<button mat-button class="bntColor">Add Player</button>-->
     <h1>{{courseName}}</h1>
+  </div>
 
-    <div class="header">
-      <p class="headInfo1">{{holeHeader}}</p>
-      <p>{{yardsHeader}}</p>
-      <p>{{parHeader}}</p>
-      <p>{{hcpHeader}}</p>
-    </div>
+    <div class="cardContainer">
+      <div class="header">
+        <p class="headInfo1">{{holeHeader}}</p>
+        <p>{{yardsHeader}}</p>
+        <p>{{parHeader}}</p>
+        <p>{{hcpHeader}}</p>
+      </div>
 
-    <div class="courseInfo" *ngFor="let hole of holesArray">
-      <p class="headInfo2">{{hole.holes}}</p>
-      <p>{{hole.yards}}</p>
-      <p>{{hole.par}}</p>
-      <p>{{hole.hcp}}</p>
-      <!--<p>{{hole.player}}</p> -->
-      <!--<p class='playaFloss' id='playa" + p + "'><span onclick='delPlaya(" + p + ")' class='fa fa-trash'></span></p>-->
-    </div>
-
+      <div class="courseInfo" *ngFor="let hole of holesArray">
+        <p class="headInfo2">{{hole.holes}}</p>
+        <p>{{hole.yards}}</p>
+        <p>{{hole.par}}</p>
+        <p>{{hole.hcp}}</p>
+        <!--<p>{{hole.player}}</p> -->
+        <!--<p class='playaFloss' id='playa" + p + "'><span onclick='delPlaya(" + p + ")' class='fa fa-trash'></span></p>-->
+      </div>
+  </div>
     <!--<div class="playas" [@players]="players.length"> -->
 
     <div class="playas">
@@ -38,13 +41,13 @@
         <p class="sm">Don't Rage Quit!!!</p>
 
         <form>
-          <input type="text" class="txt" name="player" placeholder="Player Name" [(ngModel)]="playerText">
-          <input type="submit" class="btn" [value]="playerText" (click)="addPlaya()"> <!--value="{{btnText}}" is the same thing.-->
+          <input type="text" class="txt" name="player" placeholder="Enter Player Name" [(ngModel)]="playerText">
+          <input type="submit" class="btn" [value]="playerText" (click)="addPlaya()">
         </form>
       </div>
       <div>
         <p class="life-container" *ngFor="let player of players; let i = index" (click)="removePlaya(i)">
-          {{player}}
+              {{player|nameConf:players}}
         </p>
       </div>
     </div>

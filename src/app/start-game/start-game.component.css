@@ -3,16 +3,20 @@
 /*}*/
 .container{
   background-color: lightyellow;
+  border: 1px solid black;
 }
 
 .buttonRow {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-between;
+  border: 1px solid black;
 }
 
 .bntColor {
 background-color: #dadfea;
+  border: 1px solid black;
 }
 
 .header {
@@ -34,6 +38,15 @@ background-color: #dadfea;
   /*display: flex;*/
   /*border: 1px solid black;*/
   border-bottom: 1px solid black;
+}
+
+.cardContainer{
+  display: flex;
+  flex-direction: row;
+  border: 1px solid black;
+}
+.cardUpper{
+  border: 1px solid black;
 }
 
 /*.playaFloss{*/

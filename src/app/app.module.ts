@@ -15,6 +15,7 @@ import { SelectCourseComponent } from './select-course/select-course.component';
 import { SelectTeeComponent } from './select-tee/select-tee.component';
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import {NameConfPipe} from './name-conf.pipe';
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     StartGameComponent,
     HomeComponent,
     SelectCourseComponent,
-    SelectTeeComponent
+    SelectTeeComponent,
+    NameConfPipe
   ],
   imports: [
     BrowserModule,

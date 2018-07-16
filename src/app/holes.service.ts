@@ -9,7 +9,7 @@ import {BehaviorSubject, Observable} from 'rxjs/index';
 export class HolesService {
   courseId: number;
 
-  private players = new BehaviorSubject<any>(['']);
+  private players = new BehaviorSubject<any>([]);
   player = this.players.asObservable();
   constructor(private http: HttpClient) { }
 
